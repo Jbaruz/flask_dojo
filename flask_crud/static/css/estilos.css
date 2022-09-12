@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(175, 204, 175);
+}
+h1{
+    color: rgb(33, 50, 34);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 25px;
+}
+table tr td{
+    width: 50px;
+    height: 50px;
+    
+}
+h1, .tablero{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.color1 {
+    background-color: brown;
+}
+.color2{
+    background-color: yellow;
+}

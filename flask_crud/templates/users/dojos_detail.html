@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block titulo %} Dojo details {% endblock %}
+{% block contenido %}
+{% include '_menu.html' %}
+
+<div class="container mt-5">
+    <div class="d-flex">
+        <div class="p-3 flex-fill">
+            <div class="card text-bg-light mb-3" style="max-width: 300rem;">
+                <div class="card-body">
+                    <h1> Users: {{dojo.id}}</h1>
+                    <p> Full name: {{ninja.first_name}} {{ninja.last_name}}</p>
+                    <p> Age: {{ninjas.age}} </p>
+                    <p>Created on: {{ninja.created_at}} </p>
+                    <p>Last updated on: {{ninja.updated_at}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 flex-fill">
+            <a href="/users"> Home </a>
+        </div>
+    </div>
+    <a href="/users/edit/{{user.id}}">Edit</a><a> | </a><a href="/delete/{{user.id}}">Delete</a>
+
+</div>
+
+
+{% endblock %}
