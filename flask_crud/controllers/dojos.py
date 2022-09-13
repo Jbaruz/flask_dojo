@@ -26,28 +26,4 @@ def insert_new_dojo():
             flash('There was an error inserting a new dojo', 'danger')
             return redirect('/dojos')
 
-@app.route('/dojos/<id>')
-def ninjas_to_show_by_dojo(id):
-        return render_template('/users/dojos_detail.html', user = Dojo.get_by_id(id))
     
-
-@app.route('/ninjas', methods=['GET', 'POST'])
-def add_new_ninja():
-    print(f'REQUEST TYPE', request.method)
-    if request.method == 'GET':
-        return render_template('users/addNewNinja.html')
-
-    elif request.method == 'POST':
-        print(F'AQUI--->',request.method)
-        data = {
-            "first_name": request.form['first_name'],
-            "last_name": request.form['last_name'],
-            "Age": request.form['age']
-        }
-        results=Ninja.insert_user(data)
-        print(f'result in route', results)
-        if results != False:
-            return redirect('/ninjas')
-        else:
-            flash('There was an error inserting a new user', 'danger')
-            return redirect('/dojos')

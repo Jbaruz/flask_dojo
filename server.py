@@ -1,5 +1,5 @@
 from flask_crud import app
-from flask_crud.controllers import dojos
+from flask_crud.controllers import dojos, ninjas
 from flask import render_template
 
 
