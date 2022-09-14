@@ -5,10 +5,21 @@ from flask import render_template, flash, session, redirect, request
 
 @app.route('/ninjas', methods= ['GET', 'POST'])
 def ninjas():
-    return render_template('/users/addNewNinja.html', ninjas=Ninja.get_all())
+    return render_template('/users/addNewNinja.html', ninjas=Ninja.get_all, dojos=Dojo.get_all())
+
+@app.route('/ninjas/process', methods=['POST'])
+def process_new_ninja():
+    print(request.form)
+    data = {
+        'first_name': request.form['first_name'],
+        'last_name': request.form['last_name'],
+        'age': request.form['age'],
+        'dojo_id': request.form['dojo_id'],
+    }
+    new_ninja = Ninja.add_ninja(data)
+    if new_ninja != False:
+        return redirect(f"/dojos/{request.form['dojo_id']}/")
+    flash('Failed to create Ninja', 'danger')
+    return redirect('/ninjas')
 
 
-@app.route('/ninjas/<id>', methods=['GET'])
-def ninjas_detalle(id):
-    
-    return render_template('users/ninjas_detalle.html', ninjas = Ninja.get_by_id(id), dojos=Dojo.get_all())

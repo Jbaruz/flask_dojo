@@ -6,7 +6,7 @@ class Ninja:
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.age = data['age']
-        self.dojo_id = data['dojos.id']
+        self.dojo_id = data['dojo.id']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
     
@@ -21,10 +21,9 @@ class Ninja:
     
     
     @classmethod
-    def get_by_id(cls, id):
-        query = f"SELECT * FROM ninjas JOIN dojos ON ninjas.dojo_id = dojos.id WHERE ninjas.id = %(id)s;" 
-        data = {'id': id }
+    def add_ninja(cls, data):
+        query = f"INSERT INTO ninjas (first_name, last_name, age,dojo_id) VALUES (%(first_name), %(last_name), %(age), %(dojo_id)s;" 
         results = connectToMySQL('esquema_dojos_y_ninjas').query_db(query, data)
-        return cls(results[0])if len(results) > 0 else None
+        return results
     
 

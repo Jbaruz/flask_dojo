@@ -8,11 +8,14 @@
         <div class="p-3 flex-fill">
             <div class="card text-bg-light mb-3" style="max-width: 300rem;">
                 <div class="card-body">
-                    <h1> Users: {{dojo.id}}</h1>
-                    <p> Full name: {{ninja.first_name}} {{ninja.last_name}}</p>
-                    <p> Age: {{ninjas.age}} </p>
-                    <p>Created on: {{ninja.created_at}} </p>
-                    <p>Last updated on: {{ninja.updated_at}}</p>
+                    <h1> {{dojo.name}} Details</h1>
+                    <ul>
+                        {% for ninja in dojo.ninjas %}
+                        <li>
+                            {{ninja['first_name']}} {{ninja['last_name']}}
+                        </li>
+                        % endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
