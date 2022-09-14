@@ -32,4 +32,4 @@ def dojo_details(id):
         'dojo_id': id
     }
     dojo_ninjas = Dojo.get_dojo_ninjas(data)
-    return render_template('dojos/dojo_details.html', dojo=dojo_ninjas)
+    return render_template('users/dojos_detail.html', dojo=dojo_ninjas)

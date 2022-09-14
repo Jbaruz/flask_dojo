@@ -3,29 +3,27 @@
 {% block contenido %}
 {% include '_menu.html' %}
 
-<div class="container mt-5">
-    <div class="d-flex">
-        <div class="p-3 flex-fill">
-            <div class="card text-bg-light mb-3" style="max-width: 300rem;">
-                <div class="card-body">
-                    <h1> {{dojo.name}} Details</h1>
-                    <ul>
-                        {% for ninja in dojo.ninjas %}
-                        <li>
-                            {{ninja['first_name']}} {{ninja['last_name']}}
-                        </li>
-                        % endfor %}
-                    </ul>
+    <div class="container mt-5">
+        <div class="d-flex">
+            <div class="p-3 flex-fill">
+                <div class="card text-bg-light mb-3" style="max-width: 300rem;">
+                    <div class="card-body">
+                        <h1> {{dojo.name}} Details</h1>
+                        <ul>
+                            {% for ninja in dojo.ninjas %}
+                            <li>
+                                {{ninja['first_name']}} {{ninja['last_name']}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="p-2 flex-fill">
-            <a href="/users"> Home </a>
-        </div>
-    </div>
-    <a href="/users/edit/{{user.id}}">Edit</a><a> | </a><a href="/delete/{{user.id}}">Delete</a>
 
-</div>
+        </div>
+
+
+    </div>
 
 
 {% endblock %}

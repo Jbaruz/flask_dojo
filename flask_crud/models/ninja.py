@@ -6,10 +6,10 @@ class Ninja:
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.age = data['age']
-        self.dojo_id = data['dojo.id']
+        self.dojo_id = data['dojo_id']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-    
+        print(data)
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM ninjas JOIN dojos ON ninjas.dojo_id = dojos.id;"

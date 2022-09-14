@@ -36,7 +36,7 @@ class Dojo:
     
     @classmethod
     def get_dojo_ninjas(cls,data):
-        query = "SELECT * FROM dojos JOIN ninjas ON ninjas.dojo_id = dojos.id WHERE dojos.id = %s(dojo_id)s"
+        query = "SELECT * FROM dojos JOIN ninjas ON ninjas.dojo_id = dojos.id WHERE dojos.id = %(dojo_id)s"
         results = connectToMySQL('esquema_dojos_y_ninjas').query_db(query, data)
         
         if len(results) == 0:
@@ -51,10 +51,13 @@ class Dojo:
         dojo = Dojo(dojo_data)
         all_ninjas =[]
         for data in results:
+            print(data)
             ninja_data = {
                 'id':data['ninjas.id'],
-                'first_name':data['ninjas.first_name'],
-                'age':data['ninjas.age'],
+                'first_name':data['first_name'],
+                'last_name':data['last_name'],
+                'age':data['age'],
+                'dojo_id' : data['dojo_id'],
                 'created_at':data['ninjas.created_at'],
                 'updated_at':data['ninjas.updated_at'],
             }
