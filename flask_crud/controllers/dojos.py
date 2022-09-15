@@ -5,7 +5,6 @@ from flask import render_template, flash, session, redirect, request
 @app.route('/dojos')
 def all_dojos():
     all_dojos = Dojo.get_all()
-    print(all_dojos)
     return render_template('index.html', all_dojos=all_dojos)
 
 @app.route('/dojos', methods=['GET', 'POST'])
@@ -19,7 +18,6 @@ def insert_new_dojo():
             "name": request.form['name'],
         }
         results=Dojo.insert_dojo(data)
-        print(f'result in route', results)
         if results != False:
             return redirect('/dojos')
         else:

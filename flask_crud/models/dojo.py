@@ -51,7 +51,6 @@ class Dojo:
         dojo = Dojo(dojo_data)
         all_ninjas =[]
         for data in results:
-            print(data)
             ninja_data = {
                 'id':data['ninjas.id'],
                 'first_name':data['first_name'],
@@ -62,7 +61,6 @@ class Dojo:
                 'updated_at':data['ninjas.updated_at'],
             }
             new_ninja = Ninja(ninja_data)
-            print(new_ninja)
             all_ninjas.append(new_ninja)
         dojo.ninjas = all_ninjas
         return dojo

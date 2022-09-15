@@ -9,7 +9,6 @@ def ninjas():
 
 @app.route('/ninjas/process', methods=['POST'])
 def process_new_ninja():
-    print(request.form)
     data = {
         'first_name': request.form['first_name'],
         'last_name': request.form['last_name'],
@@ -17,9 +16,10 @@ def process_new_ninja():
         'dojo_id': request.form['dojo_id'],
     }
     new_ninja = Ninja.add_ninja(data)
+    print("aqui quiero ver------>", data)
     if new_ninja != False:
-        return redirect(f"/dojos/{request.form['dojo_id']}/")
+        return redirect(f"/dojos/{request.form['dojo_id']}")
     flash('Failed to create Ninja', 'danger')
-    return redirect('/ninjas')
+    return redirect('/dojos')
 
 

@@ -22,8 +22,10 @@ class Ninja:
     
     @classmethod
     def add_ninja(cls, data):
-        query = f"INSERT INTO ninjas (first_name, last_name, age,dojo_id) VALUES (%(first_name), %(last_name), %(age), %(dojo_id)s;" 
+        query = f"INSERT INTO ninjas (first_name, last_name, age,dojo_id,created_at,updated_at) VALUES (%(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s,NOW(),NOW());" 
         results = connectToMySQL('esquema_dojos_y_ninjas').query_db(query, data)
+        print("aqui--->", data)
+        print("quiero ver results--->", results)
         return results
     
 

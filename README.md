@@ -1,5 +1,5 @@
 ## Dojos y Ninjas 
-``Trabajando en el core``
+``se completo el core``
 - Crea un nuevo proyecto Flask (HECHO)
 
 - Utiliza el esquema_dojos_y_ninjas que creaste en el curso MySQL (HECHO)
@@ -10,11 +10,11 @@
 
 - Página "Ninja" para agregar un nuevo Ninja (HECHO)
 
-- La página "Ninja" debe incluir un menú desplegable con todos los dojos en la base (FALTA)
+- La página "Ninja" debe incluir un menú desplegable con todos los dojos en la base (HECHO)
 de datos
 
-- Redirige a la página "Dojo Show" del dojo seleccionado después de crear un ninja (FALTA)
+- Redirige a la página "Dojo Show" del dojo seleccionado después de crear un ninja (HECHO)
 
-- La página "Dojo Show" debería mostrar todos los Ninjas que se agregan al Dojo (FALTA)
+- La página "Dojo Show" debería mostrar todos los Ninjas que se agregan al Dojo (HECHO)
 
-- Todos los enlaces de Inicio deben redirigir a *localhost:5000/dojos(FALTA)
+- Todos los enlaces de Inicio deben redirigir a *localhost:5000/dojos(HECHO)
